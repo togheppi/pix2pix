@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 import imageio
+from PIL import Image
 
 # For logger
 def to_np(x):
@@ -46,10 +47,9 @@ def plot_loss(d_losses, g_losses, num_epochs, save=False, save_dir='results/', s
         plt.close()
 
 
-def plot_result(generator, input, target, epoch, isTrain=True, save=False, save_dir='results/', show=False, fig_size=(5, 5)):
-
-    gen_image = generator(input)
-    gen_image = denorm(gen_image)
+def plot_test_result(input, target, gen_image, epoch, training=True, save=False, save_dir='results/', show=False, fig_size=(5, 5)):
+    if not training:
+        fig_size = (input.size(2) * 3 / 100, input.size(3)/100)
 
     fig, axes = plt.subplots(input.size()[0], 3, figsize=fig_size)
     imgs = [input, gen_image, target]
@@ -57,11 +57,11 @@ def plot_result(generator, input, target, epoch, isTrain=True, save=False, save_
         ax.axis('off')
         ax.set_adjustable('box-forced')
         # Scale to 0-255
-        img = (((img[0] - img[0].min()) * 255) / (img[0].max() - img[0].min())).cpu().data.numpy().transpose(1, 2, 0).astype(
-            np.uint8)
+        img = (((img[0] - img[0].min()) * 255) / (img[0].max() - img[0].min())).numpy().transpose(1, 2, 0).astype(np.uint8)
         ax.imshow(img, cmap=None, aspect='equal')
     plt.subplots_adjust(wspace=0, hspace=0)
-    if isTrain:
+
+    if training:
         title = 'Epoch {0}'.format(epoch + 1)
         fig.text(0.5, 0.04, title, ha='center')
 
@@ -69,10 +69,14 @@ def plot_result(generator, input, target, epoch, isTrain=True, save=False, save_
     if save:
         if not os.path.exists(save_dir):
             os.mkdir(save_dir)
-        if isTrain:
+        if training:
             save_fn = save_dir + 'Result_epoch_{:d}'.format(epoch+1) + '.png'
         else:
             save_fn = save_dir + 'Test_result_{:d}'.format(epoch+1) + '.png'
+            fig.subplots_adjust(bottom=0)
+            fig.subplots_adjust(top=1)
+            fig.subplots_adjust(right=1)
+            fig.subplots_adjust(left=0)
         plt.savefig(save_fn)
 
     if show:
@@ -82,16 +86,11 @@ def plot_result(generator, input, target, epoch, isTrain=True, save=False, save_
 
 
 # Make gif
-def make_gif(num_epochs, save_dir='results/'):
-    loss_plots = []
+def make_gif(dataset, num_epochs, save_dir='results/'):
     gen_image_plots = []
     for epoch in range(num_epochs):
         # plot for generating gif
-        save_fn1 = save_dir + 'CelebA_cDCGAN_losses_epoch_{:d}'.format(epoch + 1) + '.png'
-        loss_plots.append(imageio.imread(save_fn1))
+        save_fn = save_dir + 'Result_epoch_{:d}'.format(epoch + 1) + '.png'
+        gen_image_plots.append(imageio.imread(save_fn))
 
-        save_fn2 = save_dir + 'CelebA_cDCGAN_epoch_{:d}'.format(epoch + 1) + '.png'
-        gen_image_plots.append(imageio.imread(save_fn2))
-
-    imageio.mimsave(save_dir + 'CelebA_cDCGAN_losses_epochs_{:d}'.format(num_epochs) + '.gif', loss_plots, fps=5)
-    imageio.mimsave(save_dir + 'CelebA_cDCGAN_epochs_{:d}'.format(num_epochs) + '.gif', gen_image_plots, fps=5)
+    imageio.mimsave(save_dir + dataset + '_pix2pix_epochs_{:d}'.format(num_epochs) + '.gif', gen_image_plots, fps=5)

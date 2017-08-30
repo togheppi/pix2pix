@@ -146,14 +146,16 @@ for epoch in range(params.num_epochs):
     D_avg_losses.append(D_avg_loss)
     G_avg_losses.append(G_avg_loss)
 
-    # Show result for fixed noise
-    utils.plot_result(G, Variable(test_input.cuda()), Variable(test_target.cuda()), epoch, save=True, save_dir=save_dir)
+    # Show result for test image
+    gen_image = G(Variable(test_input.cuda()))
+    gen_image = gen_image.cpu().data
+    utils.plot_test_result(test_input, test_target, gen_image, epoch, save=True, save_dir=save_dir)
 
 # Plot average losses
 utils.plot_loss(D_avg_losses, G_avg_losses, params.num_epochs, save=True, save_dir=save_dir)
 
 # Make gif
-utils.make_gif(params.num_epochs, save_dir=save_dir)
+utils.make_gif(params.dataset, params.num_epochs, save_dir=save_dir)
 
 # Save trained parameters of model
 torch.save(G.state_dict(), model_dir + 'generator_param.pkl')

@@ -47,8 +47,11 @@ for i, (input, target) in enumerate(test_data_loader):
     x_ = Variable(input.cuda())
     y_ = Variable(target.cuda())
 
+    gen_image = G(x_)
+    gen_image = gen_image.cpu().data
+
     # Show result for test data
-    utils.plot_result(G, x_, y_, i, isTrain=False, save=True, save_dir=save_dir)
+    utils.plot_test_result(input, target, gen_image, i, training=False, save=True, save_dir=save_dir)
 
     print('%d images are generated.' % (i + 1))
 
