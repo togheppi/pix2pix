@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 import imageio
-from PIL import Image
+
 
 # For logger
 def to_np(x):

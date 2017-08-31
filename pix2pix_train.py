@@ -1,7 +1,7 @@
 import torch
 from torchvision import transforms
 from torch.autograd import Variable
-from dataset import FacadesDataset
+from dataset import DatasetFromFolder
 from model import Generator, Discriminator
 import utils
 import argparse
@@ -10,6 +10,7 @@ from logger import Logger
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', required=False, default='facades', help='input dataset')
+parser.add_argument('--direction', required=False, default='BtoA', help='input and target image order')
 parser.add_argument('--batch_size', type=int, default=1, help='train batch size')
 parser.add_argument('--ngf', type=int, default=64)
 parser.add_argument('--ndf', type=int, default=64)
@@ -31,8 +32,7 @@ data_dir = '../Data/' + params.dataset + '/'
 save_dir = params.dataset + '_results/'
 model_dir = params.dataset + '_model/'
 
-if not os.path.exists(save_dir):
-    os.mkdir(save_dir)
+c
 if not os.path.exists(model_dir):
     os.mkdir(model_dir)
 
@@ -42,13 +42,13 @@ transform = transforms.Compose([transforms.Scale(params.resize_scale),
                                 transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))])
 
 # Train data
-train_data = FacadesDataset(data_dir, subfolder='train', transform=transform)
+train_data = DatasetFromFolder(data_dir, subfolder='train', direction=params.direction, transform=transform)
 train_data_loader = torch.utils.data.DataLoader(dataset=train_data,
                                                 batch_size=params.batch_size,
                                                 shuffle=True)
 
 # Test data
-test_data = FacadesDataset(data_dir, subfolder='test', transform=transform)
+test_data = DatasetFromFolder(data_dir, subfolder='test', direction=params.direction, transform=transform)
 test_data_loader = torch.utils.data.DataLoader(dataset=test_data,
                                                batch_size=params.batch_size,
                                                shuffle=False)

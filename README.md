@@ -26,6 +26,56 @@ PyTorch implementation of Image-to-Image Translation with Conditional Adversaria
     ![N](facades_test_results/Test_result_68.png)
     ![N](facades_test_results/Test_result_94.png)
     
+## Generating Cityscapes dataset
+* Image size: 256x256
+* Number of training images: 2,975
+* Number of test images: 500
+
+### Results
+* Adam optimizer is used. Learning rate = 0.0002, batch size = 1, # of epochs = 200:
+<table align='center'>
+<tr align='center'>
+<td> GAN losses</td>
+<td> Generated images</td>
+</tr>
+<tr>
+<td><img src = 'cityscapes_results/cityscapes_pix2pix_losses_epochs_200.png'>
+<td><img src = 'cityscapes_results/cityscapes_pix2pix_epochs_200.gif'>
+</tr>
+</table>
+
+* Generated images using test data
+    * 1st column: Input / 2nd column: Generated / 3rd column: Target
+    ![N](cityscapes_test_results/Test_result_47.png)
+    ![N](cityscapes_test_results/Test_result_73.png)
+    ![N](cityscapes_test_results/Test_result_120.png)
+    ![N](cityscapes_test_results/Test_result_151.png)
+
+## Generating Maps dataset
+* Image is resized to 256x256 image (Original size: 600x600)
+* Number of training images: 1,096
+* Number of test images: 1,098
+
+### Results
+* Adam optimizer is used. Learning rate = 0.0002, batch size = 1, # of epochs = 200:
+<table align='center'>
+<tr align='center'>
+<td> GAN losses</td>
+<td> Generated images</td>
+</tr>
+<tr>
+<td><img src = 'maps_results/maps_pix2pix_losses_epochs_200.png'>
+<td><img src = 'maps_results/maps_pix2pix_epochs_200.gif'>
+</tr>
+</table>
+
+* Generated images using test data
+    * 1st column: Input / 2nd column: Generated / 3rd column: Target
+    ![N](maps_test_results/Test_result_492.png)
+    ![N](maps_test_results/Test_result_560.png)
+    ![N](maps_test_results/Test_result_627.png)
+    ![N](maps_test_results/Test_result_746.png)
+    
 ### References
 1. https://github.com/mrzhu-cool/pix2pix-pytorch
 2. https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
