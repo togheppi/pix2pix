@@ -8,16 +8,11 @@ PyTorch implementation of Image-to-Image Translation with Conditional Adversaria
 
 ### Results
 * Adam optimizer is used. Learning rate = 0.0002, batch size = 1, # of epochs = 200:
-<table align='center'>
-<tr align='center'>
-<td> GAN losses</td>
-<td> Generated images</td>
-</tr>
-<tr>
-<td><img src = 'facades_results/facades_pix2pix_losses_epochs_200.png'>
-<td><img src = 'facades_results/facades_pix2pix_epochs_200.gif'>
-</tr>
-</table>
+
+*GAN losses</p> (red: generator / orange: discriminator)* | *Generated images</p>(Input / Generated / Target)*
+:---:|:---:
+<img src = 'facades_results/facades_pix2pix_losses_epochs_200.png'> | <img src = 'facades_results/facades_pix2pix_epochs_200.gif'>
+
 
 * Generated images using test data
     * 1st column: Input / 2nd column: Generated / 3rd column: Target
@@ -33,16 +28,10 @@ PyTorch implementation of Image-to-Image Translation with Conditional Adversaria
 
 ### Results
 * Adam optimizer is used. Learning rate = 0.0002, batch size = 1, # of epochs = 200:
-<table align='center'>
-<tr align='center'>
-<td> GAN losses</td>
-<td> Generated images</td>
-</tr>
-<tr>
-<td><img src = 'cityscapes_results/cityscapes_pix2pix_losses_epochs_200.png'>
-<td><img src = 'cityscapes_results/cityscapes_pix2pix_epochs_200.gif'>
-</tr>
-</table>
+
+*GAN losses</p> (red: generator / orange: discriminator)* | *Generated images</p>(Input / Generated / Target)*
+:---:|:---:
+<img src = 'cityscapes_results/cityscapes_pix2pix_losses_epochs_200.png'> | <img src = 'cityscapes_results/cityscapes_pix2pix_epochs_200.gif'>
 
 * Generated images using test data
     * 1st column: Input / 2nd column: Generated / 3rd column: Target
@@ -58,16 +47,10 @@ PyTorch implementation of Image-to-Image Translation with Conditional Adversaria
 
 ### Results
 * Adam optimizer is used. Learning rate = 0.0002, batch size = 1, # of epochs = 200:
-<table align='center'>
-<tr align='center'>
-<td> GAN losses</td>
-<td> Generated images</td>
-</tr>
-<tr>
-<td><img src = 'maps_results/maps_pix2pix_losses_epochs_200.png'>
-<td><img src = 'maps_results/maps_pix2pix_epochs_200.gif'>
-</tr>
-</table>
+
+*GAN losses</p> (red: generator / orange: discriminator)* | *Generated images</p>(Input / Generated / Target)*
+:---:|:---:
+<img src = 'maps_results/maps_pix2pix_losses_epochs_200.png'> | <img src = 'maps_results/maps_pix2pix_epochs_200.gif'>
 
 * Generated images using test data
     * 1st column: Input / 2nd column: Generated / 3rd column: Target
