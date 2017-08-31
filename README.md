@@ -9,17 +9,18 @@ PyTorch implementation of Image-to-Image Translation with Conditional Adversaria
 ### Results
 * Adam optimizer is used. Learning rate = 0.0002, batch size = 1, # of epochs = 200:
 
-*GAN losses</p> (red: generator / orange: discriminator)* | *Generated images</p>(Input / Generated / Target)*
+GAN losses<br> (<span style="color:red">Red</span>: Generator / Orange: Discriminator) | Generated images<br>(Input / Generated / Target)
 :---:|:---:
 <img src = 'facades_results/facades_pix2pix_losses_epochs_200.png'> | <img src = 'facades_results/facades_pix2pix_epochs_200.gif'>
 
-
 * Generated images using test data
-    * 1st column: Input / 2nd column: Generated / 3rd column: Target
-    ![N](facades_test_results/Test_result_2.png)
-    ![N](facades_test_results/Test_result_11.png)
-    ![N](facades_test_results/Test_result_68.png)
-    ![N](facades_test_results/Test_result_94.png)
+
+|1st column: Input / 2nd column: Generated / 3rd column: Target|
+|:---:|
+|![](facades_test_results/Test_result_2.png)|
+|![](facades_test_results/Test_result_11.png)|
+|![](facades_test_results/Test_result_68.png)|
+|![](facades_test_results/Test_result_94.png)|
     
 ## Generating Cityscapes dataset
 * Image size: 256x256
@@ -29,16 +30,18 @@ PyTorch implementation of Image-to-Image Translation with Conditional Adversaria
 ### Results
 * Adam optimizer is used. Learning rate = 0.0002, batch size = 1, # of epochs = 200:
 
-*GAN losses</p> (red: generator / orange: discriminator)* | *Generated images</p>(Input / Generated / Target)*
+GAN losses<br> (red: generator / orange: discriminator) | Generated images<br>(Input / Generated / Target)
 :---:|:---:
 <img src = 'cityscapes_results/cityscapes_pix2pix_losses_epochs_200.png'> | <img src = 'cityscapes_results/cityscapes_pix2pix_epochs_200.gif'>
 
 * Generated images using test data
-    * 1st column: Input / 2nd column: Generated / 3rd column: Target
-    ![N](cityscapes_test_results/Test_result_47.png)
-    ![N](cityscapes_test_results/Test_result_73.png)
-    ![N](cityscapes_test_results/Test_result_120.png)
-    ![N](cityscapes_test_results/Test_result_151.png)
+
+|1st column: Input / 2nd column: Generated / 3rd column: Target|
+|:---:|
+|![](cityscapes_test_results/Test_result_47.png)|
+|![](cityscapes_test_results/Test_result_73.png)|
+|![](cityscapes_test_results/Test_result_120.png)|
+|![](cityscapes_test_results/Test_result_151.png)|
 
 ## Generating Maps dataset
 * Image is resized to 256x256 image (Original size: 600x600)
@@ -48,16 +51,18 @@ PyTorch implementation of Image-to-Image Translation with Conditional Adversaria
 ### Results
 * Adam optimizer is used. Learning rate = 0.0002, batch size = 1, # of epochs = 200:
 
-*GAN losses</p> (red: generator / orange: discriminator)* | *Generated images</p>(Input / Generated / Target)*
+GAN losses<br> (red: generator / orange: discriminator) | Generated images<br>(Input / Generated / Target)
 :---:|:---:
 <img src = 'maps_results/maps_pix2pix_losses_epochs_200.png'> | <img src = 'maps_results/maps_pix2pix_epochs_200.gif'>
 
 * Generated images using test data
-    * 1st column: Input / 2nd column: Generated / 3rd column: Target
-    ![N](maps_test_results/Test_result_492.png)
-    ![N](maps_test_results/Test_result_560.png)
-    ![N](maps_test_results/Test_result_627.png)
-    ![N](maps_test_results/Test_result_746.png)
+
+|1st column: Input / 2nd column: Generated / 3rd column: Target|
+|:---:|
+|![](maps_test_results/Test_result_492.png)|
+|![](maps_test_results/Test_result_560.png)|
+|![](maps_test_results/Test_result_627.png)|
+|![](maps_test_results/Test_result_746.png)|
     
 ### References
 1. https://github.com/mrzhu-cool/pix2pix-pytorch
