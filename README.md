@@ -9,7 +9,7 @@ PyTorch implementation of Image-to-Image Translation with Conditional Adversaria
 ### Results
 * Adam optimizer is used. Learning rate = 0.0002, batch size = 1, # of epochs = 200:
 
-GAN losses<br> ( ![AE0000](https://placehold.it/10/AE0000/000000?text=+)</span> : Generator / ![FF8900](https://placehold.it/10/FF8900/000000?text=+) : Discriminator) | Generated images<br>(Input / Generated / Target)
+GAN losses<br> ( ![AE0000](https://placehold.it/10/AE0000/000000?text=+) : Generator / ![FF8900](https://placehold.it/10/FF8900/000000?text=+) : Discriminator) | Generated images<br>(Input / Generated / Target)
 :---:|:---:
 <img src = 'facades_results/facades_pix2pix_losses_epochs_200.png'> | <img src = 'facades_results/facades_pix2pix_epochs_200.gif'>
 
@@ -30,7 +30,7 @@ GAN losses<br> ( ![AE0000](https://placehold.it/10/AE0000/000000?text=+)</span> 
 ### Results
 * Adam optimizer is used. Learning rate = 0.0002, batch size = 1, # of epochs = 200:
 
-GAN losses<br> ( ![AE0000](https://placehold.it/10/AE0000/000000?text=+)</span> : Generator / ![FF8900](https://placehold.it/10/FF8900/000000?text=+) : Discriminator) | Generated images<br>(Input / Generated / Target)
+GAN losses<br> ( ![AE0000](https://placehold.it/10/AE0000/000000?text=+) : Generator / ![FF8900](https://placehold.it/10/FF8900/000000?text=+) : Discriminator) | Generated images<br>(Input / Generated / Target)
 :---:|:---:
 <img src = 'cityscapes_results/cityscapes_pix2pix_losses_epochs_200.png'> | <img src = 'cityscapes_results/cityscapes_pix2pix_epochs_200.gif'>
 
@@ -51,7 +51,7 @@ GAN losses<br> ( ![AE0000](https://placehold.it/10/AE0000/000000?text=+)</span> 
 ### Results
 * Adam optimizer is used. Learning rate = 0.0002, batch size = 1, # of epochs = 200:
 
-GAN losses<br> ( ![AE0000](https://placehold.it/10/AE0000/000000?text=+)</span> : Generator / ![FF8900](https://placehold.it/10/FF8900/000000?text=+) : Discriminator) | Generated images<br>(Input / Generated / Target)
+GAN losses<br> ( ![AE0000](https://placehold.it/10/AE0000/000000?text=+) : Generator / ![FF8900](https://placehold.it/10/FF8900/000000?text=+) : Discriminator) | Generated images<br>(Input / Generated / Target)
 :---:|:---:
 <img src = 'maps_results/maps_pix2pix_losses_epochs_200.png'> | <img src = 'maps_results/maps_pix2pix_epochs_200.gif'>
 
