@@ -11,14 +11,14 @@ from logger import Logger
 parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', required=False, default='facades', help='input dataset')
 parser.add_argument('--direction', required=False, default='BtoA', help='input and target image order')
-parser.add_argument('--batch_size', type=int, default=1, help='train batch size')
+parser.add_argument('--batch_size', type=int, default=4, help='train batch size')
 parser.add_argument('--ngf', type=int, default=64)
 parser.add_argument('--ndf', type=int, default=64)
 parser.add_argument('--input_size', type=int, default=256, help='input image size')
 parser.add_argument('--crop_size', type=int, default=256, help='crop size (0 is false)')
 parser.add_argument('--resize_scale', type=int, default=256, help='resize scale (0 is false)')
 parser.add_argument('--fliplr', type=bool, default=True, help='random fliplr True or False')
-parser.add_argument('--num_epochs', type=int, default=200, help='number of train epochs')
+parser.add_argument('--num_epochs', type=int, default=15, help='number of train epochs')
 parser.add_argument('--lrG', type=float, default=0.0002, help='learning rate for generator, default=0.0002')
 parser.add_argument('--lrD', type=float, default=0.0002, help='learning rate for discriminator, default=0.0002')
 parser.add_argument('--lamb', type=float, default=100, help='lambda for L1 loss')
@@ -32,7 +32,8 @@ data_dir = '../Data/' + params.dataset + '/'
 save_dir = params.dataset + '_results/'
 model_dir = params.dataset + '_model/'
 
-c
+if not os.path.exists(save_dir):
+    os.mkdir(save_dir)
 if not os.path.exists(model_dir):
     os.mkdir(model_dir)
 

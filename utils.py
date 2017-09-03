@@ -51,7 +51,7 @@ def plot_test_result(input, target, gen_image, epoch, training=True, save=False,
     if not training:
         fig_size = (input.size(2) * 3 / 100, input.size(3)/100)
 
-    fig, axes = plt.subplots(input.size()[0], 3, figsize=fig_size)
+    fig, axes = plt.subplots(1, 3, figsize=fig_size)
     imgs = [input, gen_image, target]
     for ax, img in zip(axes.flatten(), imgs):
         ax.axis('off')

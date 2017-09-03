@@ -10,7 +10,7 @@ import os
 parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', required=False, default='facades', help='input dataset')
 parser.add_argument('--direction', required=False, default='BtoA', help='input and target image order')
-parser.add_argument('--batch_size', type=int, default=1, help='train batch size')
+parser.add_argument('--batch_size', type=int, default=1, help='test batch size')
 parser.add_argument('--ngf', type=int, default=64)
 parser.add_argument('--resize_scale', type=int, default=256, help='resize scale (0 is false)')
 params = parser.parse_args()
